@@ -112,7 +112,7 @@ public class EditActivity extends AppCompatActivity implements DialogInterface.O
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new UpdateTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new DictionaryEntry(mId, mSource.getText().toString(), mTranslation.getText().toString()));
+                new UpdateTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             }
         });
         mADB = new AlertDialog.Builder(this);
@@ -335,7 +335,8 @@ public class EditActivity extends AppCompatActivity implements DialogInterface.O
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class UpdateTask extends AsyncTask<DictionaryEntry,Void,Void>{
+    private class UpdateTask extends AsyncTask<Void,Void,Void>{
+
 
         @Override
         protected void onPreExecute() {
@@ -344,13 +345,11 @@ public class EditActivity extends AppCompatActivity implements DialogInterface.O
         }
 
         @Override
-        protected Void doInBackground(DictionaryEntry... dictionaryEntries) {
-            for (DictionaryEntry entry : dictionaryEntries){
-                if (entry.getId() == -1){
-                    DictionaryDatabase.getInstance(mActivity.getApplicationContext()).dao().save(entry);
-                }else{
-                    DictionaryDatabase.getInstance(mActivity.getApplicationContext()).dao().update(entry);
-                }
+        protected Void doInBackground(Void... voids) {
+            if (mId == -1){
+                DictionaryDatabase.getInstance(mActivity.getApplicationContext()).dao().save(new DictionaryEntry(mSource.getText().toString(), mTranslation.getText().toString()));
+            }else{
+                DictionaryDatabase.getInstance(mActivity.getApplicationContext()).dao().update(new DictionaryEntry(mId, mSource.getText().toString(), mTranslation.getText().toString()));
             }
             return null;
         }

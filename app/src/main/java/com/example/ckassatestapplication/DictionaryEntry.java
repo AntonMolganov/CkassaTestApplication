@@ -29,7 +29,6 @@ public class DictionaryEntry implements Comparable<DictionaryEntry>{
 
     @Ignore
     DictionaryEntry(String source, String translation) {
-        this.id = -1;
         this.source = source;
         this.translation = translation;
     }
