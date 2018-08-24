@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditActivity">
+
+
+    <EditText
+        android:id="@+id/source"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="start|bottom"
+        android:singleLine="true"
+        android:layout_alignParentTop="true"
+        android:inputType="text" />
+    <TextView
+        android:id="@+id/label_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:layout_alignParentTop="true"
+        android:gravity="top|start"
+        android:textSize="10sp"
+        android:singleLine="true"
+        android:labelFor="@id/source"
+        android:text="@string/label_word"
+        tools:ignore="SmallSp" />
+
+    <EditText
+        android:id="@+id/translation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="start|bottom"
+        android:singleLine="true"
+        android:layout_below="@id/source"
+        android:inputType="text" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:layout_below="@id/source"
+        android:gravity="top|start"
+        android:textSize="10sp"
+        android:singleLine="true"
+        android:labelFor="@id/translation"
+        android:text="@string/label_translation"
+        tools:ignore="SmallSp" />
+
+
+    <TextView
+        android:id="@+id/label_suggestions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:layout_below="@id/translation"
+        android:gravity="top|start"
+        android:textSize="10sp"
+        android:singleLine="true"
+        android:labelFor="@id/suggestions"
+        android:text="@string/suggestions"
+        tools:ignore="SmallSp" />
+    <ListView
+        android:id="@+id/suggestions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_above="@id/commit"
+        android:layout_below="@id/label_suggestions"
+        android:visibility="invisible"/>
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/commit"
+        android:layout_below="@id/label_suggestions"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/commit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"/>
+</RelativeLayout>

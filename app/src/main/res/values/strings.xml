@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">CkassaTestApplication</string>
+    <string name="main_title">Словарь</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="edit_title_add">Добавить слово</string>
+    <string name="edit_title_edit">Изменить слово</string>
+    <string name="delete_message">Удалить слово</string>
+    <string name="yes">ДА</string>
+    <string name="no">НЕТ</string>
+    <string name="label_word">Слово</string>
+    <string name="label_translation">Перевод</string>
+    <string name="suggestions">Предложения</string>
+    <string name="edit_button_add">Добавить</string>
+    <string name="edit_button_save">Сохранить</string>
+    <string name="yandex_compliance">Powered by Yandex.Dictionary</string>
+    <string name="Close">Close</string>
+    <string name="loaderrormessage">Database error while loading dictionary entry</string>
+    <string name="deleteerrormessage">Delete failed</string>
+    <string name="donemessage">Done</string>
 </resources>
