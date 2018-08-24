@@ -183,12 +183,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected List doInBackground(Void... voids) {
             List<DictionaryEntry> newData = DictionaryDatabase.getInstance(getApplicationContext()).dao().findAll();
-            if (newData.size() == 0){
-                DictionaryDatabase.getInstance(getApplicationContext()).dao().save(new DictionaryEntry("Красный","Red"));
-                DictionaryDatabase.getInstance(getApplicationContext()).dao().save(new DictionaryEntry("Апельсин","Orange"));
-                DictionaryDatabase.getInstance(getApplicationContext()).dao().save(new DictionaryEntry("Круг","Circle"));
-            }
-            newData = DictionaryDatabase.getInstance(getApplicationContext()).dao().findAll();
             Collections.sort(newData);
             return newData;
         }
